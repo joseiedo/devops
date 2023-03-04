@@ -1,0 +1,631 @@
+{
+	"info": {
+		"_postman_id": "0747a074-59f2-48ed-9e8a-39f6940682d6",
+		"name": "sportivity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21621912"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "login [publico]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "teste@cwi.com.br",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout [publico]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar usuário [publico]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Teste 4\",\n    \"email\": \"teste4@cwi.com.br\",\n    \"senha\": \"123456\",\n    \"dataNascimento\": \"2003-02-24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Postagem",
+			"item": [
+				{
+					"name": "curtir postagem [privado]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postagens/5/curtir",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"5",
+								"curtir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "descurtir postagem [privado]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postagens/5/descurtir",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"5",
+								"descurtir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editar postagem [privado]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"conteudo\": \"9 da matina, o dia tá pra começar\",\n    \"isPrivado\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postagens/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remover postagem [privado]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postagens/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar postagens [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/postagens/listar?page=0&size=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"listar"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incluir postagem [privado]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conteudo\": \"9 da matina, o dia tá pra começar\",\r\n    \"urlImagem\": \"https://criticalhits.com.br/wp-content/uploads/2021/01/Rock_Lees_Weights.jpg\",\r\n    \"isPrivado\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postagens",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comentar postagem [privado]",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"conteudo\": \"Esse aí ficou brabo, rei.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/postagens/2/comentar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"2",
+								"comentar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Comentarios da postagem [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/postagens/1/comentarios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"postagens",
+								"1",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Amizades",
+			"item": [
+				{
+					"name": "remover amizade [privado]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios/removeramizade/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"removeramizade",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enviar amizade [privado]",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/1/enviaramizade",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"1",
+								"enviaramizade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aceitar amizade [privado]",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/aceitaramizade/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"aceitaramizade",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar solicitacoes recebidas [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/solicitacoesrecebidas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"solicitacoesrecebidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Amigos [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/amigos?texto=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"amigos"
+							],
+							"query": [
+								{
+									"key": "texto",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Editar usuário atual [privado]",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Zezinho\",\r\n    \"apelido\": \"Ooh mais brabuh\",\r\n    \"urlImagem\": \"t4ste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/usuarios/editarmeusdados",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"editarmeusdados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar usuário [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/pesquisar?texto=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"pesquisar"
+							],
+							"query": [
+								{
+									"key": "texto",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhar usuario [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/1/detalhes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"1",
+								"detalhes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhar usuario autenticado [privado]",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/usuarios/me",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"usuarios",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
