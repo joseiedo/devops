@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 services:
   postgres:
@@ -14,7 +14,7 @@ services:
     networks:
       - app
     ports:
-      - "5432:5432"
+      - '5432:5432'
     restart: always
 
   app:
@@ -24,13 +24,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: sportivity-app:v1
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/sportivity
       - SPRING_DATASOURCE_USER=root
       - SPRING_DATASOURCE_PASSWORD=root
     ports:
-      - "8080:8080"
+      - '8080:8080'
     networks:
       - app
 
