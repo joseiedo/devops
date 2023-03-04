@@ -2,10 +2,6 @@
 
 API para sistema de rede social sportivity.
 
-## IMPORTANTE
-Configure seu banco de dados no arquivo 
-`/src/main/resources/application.yml`
-
 ## Funcionalidades da API
 
 ### REQ01 Cadastro de usuarios
